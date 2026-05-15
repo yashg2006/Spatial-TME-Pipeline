@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+env/
+venv/
+ENV/
+
+# Data and Outputs
+data/
+outputs/
+*.h5ad
+V1_Breast_Cancer_Block_A_Section_1/
+
+# IDEs
+.vscode/
+.idea/
