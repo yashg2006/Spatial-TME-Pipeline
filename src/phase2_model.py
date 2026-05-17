@@ -365,7 +365,31 @@ def run_phase2():
     
     plot_results(all_results, OUTPUT_DIR)
     logger.info(f"🏆 Best Model: {best_model['name']} (F1: {best_model['test_f1']:.4f})")
+    # After the line: logger.info(f"🏆 Best Model: {best_model['name']} (F1: {best_model['test_f1']:.4f})")
+
+    # Save metadata for Phase 3
+    best_model_metadata = {
+    'model_name': best_model['name'],
+    'architecture': best_model['name'].split('-')[0],
+    'graph_type': best_model['name'].split('-')[1],
+    'test_f1': best_model['test_f1'],
+    'in_channels': in_ch,
+    'hidden_channels': hid,
+    'num_classes': n_cls,
+    'label_strategy': "merge_immune"
+    }
+
+    
+    with open(os.path.join(MODEL_DIR, "best_model_metadata.pkl"), "wb") as f:
+        pickle.dump(best_model_metadata, f)
+
+    logger.info(f"  ✅ Saved metadata for Phase 3")
+    
     return best_model
+
+# After the line: logger.info(f"🏆 Best Model: {best_model['name']} (F1: {best_model['test_f1']:.4f})")
+
+# Save metadata for Phase 3
 
 if __name__ == "__main__":
     run_phase2()
