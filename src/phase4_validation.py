@@ -165,7 +165,7 @@ def compute_spatial_variability(adata, genes):
     elif "spatial_connectivities" in adata.obsp:
         W = adata.obsp["spatial_connectivities"]
     else:
-        print("  ⚠ No spatial graph in adata.obsp — rebuilding from coordinates...")
+        print("   No spatial graph in adata.obsp — rebuilding from coordinates...")
         if "spatial" not in adata.obsm:
             print("  ⚠ No spatial coordinates either — skipping spatial filter.")
             return pd.Series(index=genes, data=np.nan)
