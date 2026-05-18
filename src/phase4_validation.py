@@ -679,7 +679,7 @@ def run_phase4():
     for f in sorted(os.listdir(OUTPUT_DIR)):
         print(f"  {f}")
 
-    print("\n📌 NEXT STEPS:")
+    print("\n NEXT STEPS:")
     print("  1. Read validation_report.txt for key findings")
     print("  2. refined_genes_global.csv → final biomarker list")
     print("  3. Check GSEA plots for pathway enrichment story")
