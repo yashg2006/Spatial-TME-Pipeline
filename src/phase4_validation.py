@@ -118,7 +118,7 @@ def load_consensus_genes(top_n=100):
     df = pd.read_csv(path, index_col=0)
     df.columns = ["mean_rank"]
     genes = df.sort_values("mean_rank").head(top_n).index.tolist()
-    print(f"  ✓ Loaded {len(genes)} consensus genes from Borda ranks")
+    print(f"   Loaded {len(genes)} consensus genes from Borda ranks")
     return genes
 
 
@@ -131,9 +131,9 @@ def load_per_class_genes(top_n=100):
             df.columns = ["importance"]
             genes = df.sort_values("importance", ascending=False).head(top_n).index.tolist()
             per_class[cls] = genes
-            print(f"  ✓ Loaded {len(genes)} {cls}-specific genes")
+            print(f"   Loaded {len(genes)} {cls}-specific genes")
         else:
-            print(f"  ⚠ {cls} gene scores not found — skipping")
+            print(f"   {cls} gene scores not found — skipping")
     return per_class
 
 
