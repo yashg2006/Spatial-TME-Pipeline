@@ -390,10 +390,10 @@ def run_gsea(gene_list, label="consensus"):
                 print(f"  ✓ Success with: {gs}")
                 break
         except Exception as e:
-            print(f"  ⚠ Failed ({str(e)[:60]}) — trying next ...")
+            print(f"  Failed ({str(e)[:60]}) — trying next ...")
 
     if results.empty:
-        print(f"  ⚠ GSEA [{label}]: no results.")
+        print(f"  GSEA [{label}]: no results.")
         return pd.DataFrame()
 
     sig = results[results["Adjusted P-value"] < 0.05].copy()
