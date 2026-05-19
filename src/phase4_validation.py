@@ -505,7 +505,7 @@ def plot_gene_correlation_heatmap(adata, genes, top_n=30):
 
 def plot_spatial_overview(adata, genes, top_n=9):
     if "spatial" not in adata.obsm:
-        print("  ⚠ No spatial coordinates — skipping.")
+        print("   No spatial coordinates — skipping.")
         return
     valid  = [g for g in genes[:top_n] if g in adata.var_names]
     if not valid:
@@ -596,7 +596,7 @@ def generate_summary_report(overlap_global, overlap_per_class, gsea_global, de_d
     with open(os.path.join(OUTPUT_DIR, "validation_report.txt"), "w") as f:
         f.write(report)
     print("\n" + report)
-    print("\n  ✓ Saved: validation_report.txt")
+    print("\n  Saved: validation_report.txt")
 
 
 # ── Main ───────────────────────────────────────────────────────────────────────
@@ -676,7 +676,7 @@ def run_phase4():
                             gsea_global, de_df_global)
 
     print("\n" + "=" * 70)
-    print("  ✅ PHASE 4 COMPLETE")
+    print("  PHASE 4 COMPLETE")
     print("=" * 70)
     print("\nOutput files:")
     for f in sorted(os.listdir(OUTPUT_DIR)):
