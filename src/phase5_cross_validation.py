@@ -229,7 +229,7 @@ def run_kfold_cv(data, le, arch="SAGE", n_folds=N_FOLDS):
         all_pred.extend(pred.tolist())
 
         cls_scores = ", ".join([f"{c}={report[c]['f1-score']:.3f}" for c in le.classes_])
-        print(f"  ✓ Fold {fold+1} F1={final_f1:.4f}  ({cls_scores})")
+        print(f"   Fold {fold+1} F1={final_f1:.4f}  ({cls_scores})")
 
         # Free GPU memory between folds
         del model
