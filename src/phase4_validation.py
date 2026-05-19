@@ -118,7 +118,7 @@ def load_consensus_genes(top_n=100):
     df = pd.read_csv(path, index_col=0)
     df.columns = ["mean_rank"]
     genes = df.sort_values("mean_rank").head(top_n).index.tolist()
-    print(f"  ✓ Loaded {len(genes)} consensus genes from Borda ranks")
+    print(f"   Loaded {len(genes)} consensus genes from Borda ranks")
     return genes
 
 
@@ -133,7 +133,11 @@ def load_per_class_genes(top_n=100):
             per_class[cls] = genes
             print(f"   Loaded {len(genes)} {cls}-specific genes")
         else:
+<<<<<<< HEAD
             print(f"  {cls} gene scores not found — skipping")
+=======
+            print(f"   {cls} gene scores not found — skipping")
+>>>>>>> cc2a160c3d9aaef66f14a82fcba0e92f384143b9
     return per_class
 
 
@@ -165,7 +169,7 @@ def compute_spatial_variability(adata, genes):
     elif "spatial_connectivities" in adata.obsp:
         W = adata.obsp["spatial_connectivities"]
     else:
-        print("  ⚠ No spatial graph in adata.obsp — rebuilding from coordinates...")
+        print("   No spatial graph in adata.obsp — rebuilding from coordinates...")
         if "spatial" not in adata.obsm:
             print("  ⚠ No spatial coordinates either — skipping spatial filter.")
             return pd.Series(index=genes, data=np.nan)
@@ -679,7 +683,7 @@ def run_phase4():
     for f in sorted(os.listdir(OUTPUT_DIR)):
         print(f"  {f}")
 
-    print("\n📌 NEXT STEPS:")
+    print("\n NEXT STEPS:")
     print("  1. Read validation_report.txt for key findings")
     print("  2. refined_genes_global.csv → final biomarker list")
     print("  3. Check GSEA plots for pathway enrichment story")
