@@ -105,7 +105,7 @@ def fdr_correction(pvalues):
             _, padj, _, _ = multipletests(pvalues, method="fdr_bh")
             return padj
         except ImportError:
-            print("  ⚠ Using Bonferroni (install statsmodels for BH correction).")
+            print("  Using Bonferroni (install statsmodels for BH correction).")
             return np.minimum(pvalues * len(pvalues), 1.0)
 
 
@@ -131,9 +131,9 @@ def load_per_class_genes(top_n=100):
             df.columns = ["importance"]
             genes = df.sort_values("importance", ascending=False).head(top_n).index.tolist()
             per_class[cls] = genes
-            print(f"  ✓ Loaded {len(genes)} {cls}-specific genes")
+            print(f"   Loaded {len(genes)} {cls}-specific genes")
         else:
-            print(f"  ⚠ {cls} gene scores not found — skipping")
+            print(f"  {cls} gene scores not found — skipping")
     return per_class
 
 
