@@ -133,11 +133,10 @@ def load_per_class_genes(top_n=100):
             per_class[cls] = genes
             print(f"   Loaded {len(genes)} {cls}-specific genes")
         else:
-<<<<<<< HEAD
+
             print(f"  {cls} gene scores not found — skipping")
-=======
-            print(f"   {cls} gene scores not found — skipping")
->>>>>>> cc2a160c3d9aaef66f14a82fcba0e92f384143b9
+
+
     return per_class
 
 
