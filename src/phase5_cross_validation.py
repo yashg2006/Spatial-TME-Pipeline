@@ -600,7 +600,7 @@ def run_phase5():
     for f in sorted(os.listdir(OUTPUT_DIR)):
         print(f"  {f}")
 
-    print("\n📌 KEY NUMBERS FOR YOUR PAPER:")
+    print("\n KEY NUMBERS FOR YOUR PAPER:")
     for arch, res in all_results.items():
         print(f"  {arch}: F1 = {res['mean']:.4f} ± {res['std']:.4f}")
 
