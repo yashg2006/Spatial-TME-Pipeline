@@ -594,7 +594,7 @@ def run_phase5():
         print("  4. Re-run Phase 5")
 
     print("\n" + "=" * 70)
-    print("  ✅ PHASE 5 COMPLETE")
+    print("   PHASE 5 COMPLETE")
     print("=" * 70)
     print("\nOutput files:")
     for f in sorted(os.listdir(OUTPUT_DIR)):
